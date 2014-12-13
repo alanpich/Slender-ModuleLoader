@@ -32,6 +32,8 @@
 namespace Slender\ModuleLoader\Locator;
 
 
+use Slender\ModuleLoader\ModuleLocatorInterface;
+
 class InvokableClassLocator implements ModuleLocatorInterface
 {
 
@@ -47,8 +49,8 @@ class InvokableClassLocator implements ModuleLocatorInterface
     {
         if(class_exists($moduleIdentifier)){
             $module = new $moduleIdentifier;
-            if(is_callable($module)){
-                return [$module];
+            if(method_exists($module,'__invoke')){
+                return $module;
             }
         }
         return false;

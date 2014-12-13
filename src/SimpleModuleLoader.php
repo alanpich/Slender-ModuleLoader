@@ -32,8 +32,8 @@
 namespace Slender\ModuleLoader;
 
 
+use Slender\ModuleLoader\Exception\InvalidArgumentException;
 use Slender\ModuleLoader\Locator\InvokableClassLocator;
-use Slender\ModuleLoader\Locator\ModuleLocatorInterface;
 use Slender\ModuleLoader\Locator\SlenderModuleLocator;
 
 class SimpleModuleLoader extends ModuleLoader
@@ -46,7 +46,7 @@ class SimpleModuleLoader extends ModuleLoader
 
         foreach(func_get_args() as $arg){
             if( ! $arg instanceof ModuleLocatorInterface){
-                throw new \InvalidArgumentException("Arguments must be instance of ModuleLoaderInterface");
+                throw new InvalidArgumentException("Arguments must be instance of ModuleLoaderInterface");
             }
             $this->addLocator(new $arg);
         }

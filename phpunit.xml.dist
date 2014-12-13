@@ -12,7 +12,7 @@
          bootstrap="tests/bootstrap.php"
         >
     <testsuites>
-        <testsuite name="Slender Configurator Test Suite">
+        <testsuite name="Slender ModuleLoader Test Suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>

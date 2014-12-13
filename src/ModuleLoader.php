@@ -31,14 +31,15 @@
  */
 namespace Slender\ModuleLoader;
 
-use \Slender\ModuleLoader\Locator\ModuleLocatorInterface;
+use Slender\ModuleLoader\Exception\AttemptedToLoadModuleTwiceException;
+use \Slender\ModuleLoader\ModuleLocatorInterface;
 
 /**
  * Class ModuleLoader
  *
  * @package Slender\ModuleLoader
  */
-abstract class ModuleLoader
+class ModuleLoader
 {
 
     /**
@@ -81,7 +82,7 @@ abstract class ModuleLoader
      */
     public function removeLocator(ModuleLocatorInterface $locator)
     {
-        if(($key = array_search($$locator, $this->locators)) !== false) {
+        if(($key = array_search($locator, $this->locators)) !== false) {
             unset($this->locators[$key]);
         }
         return $this;
@@ -93,12 +94,13 @@ abstract class ModuleLoader
      *
      * @param string $moduleIdentifier
      * @param mixed  $arg
+     * @throws AttemptedToLoadModuleTwiceException if module is already loaded
      * @return $this
      */
-    public function load( $moduleIdentifier, $arg )
+    public function load( $moduleIdentifier, $arg = null )
     {
         if(in_array($moduleIdentifier, $this->loadedModules)){
-            throw new \RuntimeException("Attempted to load module $moduleIdentifier multiple times");
+            throw new AttemptedToLoadModuleTwiceException("Attempted to load module $moduleIdentifier multiple times");
         }
         foreach($this->locators as $locator){
             /** @var Callable $invoker */

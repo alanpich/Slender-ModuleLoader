@@ -48,6 +48,6 @@ interface ModuleInterface
      *
      * @return mixed
      */
-    public function invokeModule( $container );
+    public function invokeModule( $container = null );
 
 } 

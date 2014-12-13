@@ -32,6 +32,8 @@
 namespace Slender\ModuleLoader\Locator;
 
 
+use Slender\ModuleLoader\ModuleLocatorInterface;
+
 class SlenderModuleLocator implements ModuleLocatorInterface
 {
 
