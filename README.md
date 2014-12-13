@@ -1,9 +1,8 @@
 Slender Module Loader
 ===
-[![Latest Stable Version](https://poser.pugx.org/slender/module-manager/v/stable.svg)](https://packagist.org/packages/slender/module-manager) [![Total Downloads](https://poser.pugx.org/slender/module-manager/downloads.svg)](https://packagist.org/packages/slender/module-manager) [![License](https://poser.pugx.org/slender/module-manager/license.svg)](https://packagist.org/packages/slender/module-manager)
+[![Latest Stable Version](https://poser.pugx.org/slender/module-loader/v/stable.svg)](https://packagist.org/packages/slender/module-loader) [![Total Downloads](https://poser.pugx.org/slender/module-loader/downloads.svg)](https://packagist.org/packages/slender/module-loader) [![License](https://poser.pugx.org/slender/module-loader/license.svg)](https://packagist.org/packages/slender/module-loader)
 
-[![Build Status](https://travis-ci.org/alanpich/Slender-ModuleManager.svg?branch=develop)](https://travis-ci.org/alanpich/Slender-ModuleManager) [![Coverage Status](https://coveralls.io/repos/alanpich/Slender-ModuleManager/badge.png?branch=develop)](https://coveralls.io/r/alanpich/Slender-ModuleManager?branch=develop) 
-
+[![Build Status](https://travis-ci.org/alanpich/Slender-ModuleLoader.svg)](https://travis-ci.org/alanpich/Slender-ModuleLoader) [![Coverage Status](https://coveralls.io/repos/alanpich/Slender-ModuleLoader/badge.png)](https://coveralls.io/r/alanpich/Slender-ModuleLoader) 
 ---
 
 Simple Module loading for decoupled application components
